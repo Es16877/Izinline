@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Izin Keluar - Waktu Indonesia Barat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="loginSection" class="login-section">
+            <h2>Login dengan Google</h2>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email Google" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <div id="loginError" style="color: #e74c3c; margin-top: 10px; display: none;"></div>
+        </div>
+
+        <div id="mainContent" style="display: none;">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">US</div>
+                <div class="user-details">
+                    <h3 id="userName">Nama Pengguna</h3>
+                    <p id="userPosition">Posisi: -</p>
+                    <p id="userEmail">Email: -</p>
+                </div>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+
+            <header>
+                <h1>Sistem Izin Keluar</h1>
+                <p>Durasi izin keluar maksimal 15 menit (Maks 4x/hari per staff)</p>
+            </header>
+
+            <div class="date-display">
+                <div class="date-box">
+                    <h3>Hari Ini</h3>
+                    <p id="todayDate">-</p>
+                </div>
+            </div>
+
+            <div class="quota-info">
+                <p>Kuota izin keluar hari ini: <span id="quotaCount" class="quota-count">0</span>/4 kali</p>
+                <p id="quotaWarning" class="quota-warning">Kuota hari ini sudah habis</p>
+            </div>
+
+            <div class="clock-container">
+                <h2 class="clock" id="clock">00:00:00</h2>
+                <p class="date" id="currentDate">Hari, DD Bulan YYYY</p>
+            </div>
+
+            <div class="permission-section">
+                <button class="btn btn-primary" id="exitBtn">IZIN KELUAR</button>
+                <button class="btn btn-secondary" id="returnBtn" disabled>IZIN MASUK</button>
+            </div>
+
+            <div class="dashboard">
+                <h2>Dashboard Staff Yang Sedang Keluar</h2>
+                <div class="staff-list" id="staffList">
+                    <div class="empty-state">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4076/4076478.png" alt="No staff outside">
+                        <p>Tidak ada staff yang sedang keluar</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h2>Riwayat Izin Keluar Hari Ini</h2>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Waktu Keluar</th>
+                            <th>Waktu Kembali</th>
+                            <th>Durasi</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <!-- Data akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
